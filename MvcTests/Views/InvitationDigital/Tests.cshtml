@@ -1,0 +1,45 @@
+@model MvcTests.Models.TestViewModel
+
+@{
+    ViewBag.Title = "Tests";
+}
+
+<h2>Details</h2>
+
+<div>
+    <hr />
+    @if (Model is null)
+    {
+        <h4> Details not found </h4>
+    }
+    else
+    {
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CreatedDate)
+            </dd>
+
+        </dl>
+    }
+</div>
+
