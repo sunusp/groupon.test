@@ -4,7 +4,7 @@ namespace TechnicalTests
 {
     public class Sorter
     {
-        public IList<T> BubbleSort<T>(IList<T> list, IComparer<T> comparer)
+        private IList<T> BubbleSort<T>(IList<T> list, IComparer<T> comparer)
         {
             bool incomplete = true;
             while (incomplete)

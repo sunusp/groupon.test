@@ -45,7 +45,7 @@ namespace MvcTestsApi.Controllers
                 throw new HttpResponseException(HttpStatusCode.NotFound);
             }
 
-            TestDomainModel testDomainModel = Mapper.Map<TestDto, TestDomainModel>(_returnValues[index]);
+            var testDomainModel = Mapper.Map<TestDto, TestDomainModel>(_returnValues[index]);
 
             return Ok(testDomainModel);
         }
