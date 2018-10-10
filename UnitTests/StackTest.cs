@@ -122,5 +122,27 @@ namespace UnitTests
             Assert.AreEqual(0, stack.Count());
             Assert.AreNotEqual(pushedItems.Length, stack.Count());
         }
+
+        [TestCase(5, new int[] { 10, 20, 30, 40, 50 }, 20, true)]
+        [TestCase(2, new int[] { 10, 20 }, 50, false)]
+        public void Stack_Contains_Test(
+          int maxSize,
+          int[] pushedItems,
+          int expectedItem,
+          bool isExists)
+        {
+            // arrange
+            IStack<int> stack = new Stack<int>(maxSize);
+            foreach (int pushedItem in pushedItems)
+            {
+                stack.Push(pushedItem);
+            }
+
+            // act
+            bool expectedResult = stack.Contains(expectedItem);
+
+            // assert
+            Assert.AreEqual(expectedResult, isExists);
+        }
     }
 }
